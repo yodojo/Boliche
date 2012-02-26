@@ -7,41 +7,130 @@ public class JogoDeBolicheTest {
 	@Test
 	public void deveMarcarZeroPontosSeErrarTodasJogadas() {
 		JogoDeBoliche j = new JogoDeBoliche();
-		for (int i = 0; i < 10; i++) {
-			j.jogar(0, 0);
-		}
-
+		j.jogar(0,0)
+		 .jogar(0,0)
+		 .jogar(0,0)
+		 .jogar(0,0)
+		 .jogar(0,0)
+		 .jogar(0,0)
+		 .jogar(0,0)
+		 .jogar(0,0)
+		 .jogar(0,0)
+		 .jogar(0,0);
 		Assert.assertEquals(0, j.getPontos());
 	}
 
 	@Test
-	public void deveRetornar63SeMarcouTudoTres() {
+	public void deveRetornar60SeMarcouTudoTres() {
 		JogoDeBoliche j = new JogoDeBoliche();
-		for (int i = 0; i < 9; i++) {
-			j.jogar(3,3);
-		}
-		j.jogar(3,3,3);
-		Assert.assertEquals(63, j.getPontos());
+		j.jogar(3,3)
+		 .jogar(3,3)
+		 .jogar(3,3)
+		 .jogar(3,3)
+		 .jogar(3,3)
+		 .jogar(3,3)
+		 .jogar(3,3)
+		 .jogar(3,3)
+		 .jogar(3,3)
+		 .jogar(3,3);
+		Assert.assertEquals(60, j.getPontos());
 	}
 
 	@Test
 	public void primeiraSpareRestoDasJogadasUm() {
 		JogoDeBoliche j = new JogoDeBoliche();
-		j.jogar(5,5);
-		for (int i = 0; i < 8; i++) {
-			j.jogar(1,1);
-		}
-		j.jogar(1,1,1);
+		j.jogar(5,5)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1);
+		Assert.assertEquals(29, j.getPontos());
+	}
+
+	public void ultimaSpareAnterioresUm() {
+		JogoDeBoliche j = new JogoDeBoliche();
+		j.jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(5,5,1);
+		Assert.assertEquals(29, j.getPontos());
+	}
+
+	public void penultimaEUltimaJogadasSpare() {
+		JogoDeBoliche j = new JogoDeBoliche();
+		j.jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(5,5)
+		 .jogar(5,5,1);
+		Assert.assertEquals(42, j.getPontos());
+	}
+
+
+	@Test
+	public void primeiroStrikeRestoDasJogadasUm() {
+		JogoDeBoliche j = new JogoDeBoliche();
+		j.jogar(10)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1);
+		Assert.assertEquals(30, j.getPontos());
+	}
+
+	@Test
+	public void ultimoStrikeResto1() {
+		JogoDeBoliche j = new JogoDeBoliche();
+		j.jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(1,1)
+		 .jogar(10,1,1);
 		Assert.assertEquals(30, j.getPontos());
 	}
 	
-	public void ultimaSpareAnterioresUm() {
+	@Test
+	public void jogoPerfeito() {
 		JogoDeBoliche j = new JogoDeBoliche();
-		for (int i = 0; i < 9; i++) {
-			j.jogar(1,1);
-		}
-		j.jogar(5,5);
-		Assert.assertEquals(29, j.getPontos());
+		j.jogar(10)
+		 .jogar(10)
+		 .jogar(10)
+		 .jogar(10)
+		 .jogar(10)
+		 .jogar(10)
+		 .jogar(10)
+		 .jogar(10)
+		 .jogar(10)
+		 .jogar(10,10,10);
+		Assert.assertEquals(300, j.getPontos());
 	}
+	
+	
 
 }
