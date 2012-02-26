@@ -16,12 +16,27 @@ public class Rodada {
 	public int getPrimeiraJogada() {
 		return jogadas.get(0);
 	}
+	
+	public int getSegundaJogada() {
+		return jogadas.get(1);
+	}
 
 	public boolean isSpare() {
-		if (jogadas.get(0) + jogadas.get(1) == 10)
+		if (!isUltimaRodada() && (jogadas.get(0) + jogadas.get(1) == 10))
 			return true;
 		else
 			return false;
+	}
+
+	public boolean isStrike() {
+		if (!isUltimaRodada() && jogadas.get(0) == 10)
+			return true;
+		else
+			return false;
+	}
+	
+	public boolean isUltimaRodada(){
+		return jogadas.size() == 3;
 	}
 
 	public List<Integer> getJogadas() {
