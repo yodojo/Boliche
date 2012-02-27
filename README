@@ -1,0 +1,22 @@
+Kata do Boliche
+
+Descrição do Problema
+
+Crie um programa, que, dada uma sequencia válida de jogadas de um jogo convencional de Boliche, retorna o total de pontos daquele jogo. Algumas das coisas que o programa NÃO irá fazer:
+-Não checará se as jogadas são válidas
+-Não checará o número de jogadas ou rodadas/frames
+-Não nos dará quantidade de pontos em rodadas/frames intermediários
+
+Podemos resumir o esquema de pontuação do boliche da seguinte maneira:
+-Em cada jogo de boliche, o jogador tem dez rodadas ou frames
+-Em cada frame, o jogador tem direito a duas jogadas para tentar derrubar todos os pinos
+-Se em duas jogadas, o jogador falhar em derrubar todos os pinos, sua pontuação para aquela rodada/frame corresponde ao número de pinos derrubados
+-Se em duas jogadas, o jogador derrubar todos os pinos, damos o nome de "Spare", e sua pontuação para aquela rodada/frame corresponde aos 10 pontos dos pinos derrubados, mais o número de pinos derrubados em sua próxima jogada
+-Se na primeira jogada, o jogador derrubar todos os pintos, damos o nome de "Strike", e sua pontuação para aquela rodada/frame corresponde aos 10 pontos dos pinos derrubados, mais o número de pinos derrubados em suas duas próximas jogadas.
+-Se o jogador conseguir um Spare ou um Strike na última rodada/frame, o jogador pode jogar mais uma ou duas bolas respectivamente. Essas jogadas extras são parte da mesma rodada. Se o jogador derrubar todos os pinos, o processo não se repete: as jogadas extras são usadas apenas para calcular a pontuação do último frame (e não sofrem o bonus de pontos comuns do spare e strike, ou seja, a maior quantidade de pontos para o último frame é de 30, fazendo 3 Strikes consecutivos)
+-O número total de pontos, é a soma dos pontos de todas as rodadas/frames
+
+
+Para tirar as dúvidas de como é feita a contagem, esse link pode ajudar:
+
+http://www.portalsaofrancisco.com.br/alfa/boliche/contagem-dos-pontos-de-boliche.php
