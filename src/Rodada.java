@@ -22,17 +22,11 @@ public class Rodada {
 	}
 
 	public boolean isSpare() {
-		if (!isUltimaRodada() && (jogadas.get(0) + jogadas.get(1) == 10))
-			return true;
-		else
-			return false;
+		return !isUltimaRodada() && (jogadas.get(0) + jogadas.get(1) == 10);
 	}
 
 	public boolean isStrike() {
-		if (!isUltimaRodada() && jogadas.get(0) == 10)
-			return true;
-		else
-			return false;
+		return !isUltimaRodada() && jogadas.get(0) == 10;
 	}
 	
 	public boolean isUltimaRodada(){
